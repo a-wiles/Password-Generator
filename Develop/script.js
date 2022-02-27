@@ -2,20 +2,16 @@
 var generateBtn = document.querySelector("#generate");
 
 // Arrays
+
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@","\", ^", "_", "`", "{", "|", "}", "~"];
-var passwordLength = randomNumber(7, 127);
+var randomCharacters = (7, 127);
 
-var randomNumber = function(min, max) {
-var value = Math.floor(Math.random() * (max - min + 1));
-console.log (randomNumber);
-
-return value;
-};
-var passwordLength = randomNumber(7, 127);
-//var prompts = function () {
+randomCharacters = function (min, max) {
+  var value = Math.floor(Math.random())
+ }
 
 function prompts () {
   // How long is password?
@@ -70,7 +66,6 @@ function prompts () {
 function generatePassword () {
   //Randomizing Prompts results.
   var runPrompts = prompts();
-  var passwordResults = [];
   var potentialResults = [];
   var actualResults = [];
 
@@ -102,9 +97,21 @@ function generatePassword () {
     actualResults.push(randomCharacters(special));
   }  
 
+  for (var i = 0; i < runPrompts.passwordLengthSelect; i++) {
+  var potentialResults = randomCharacters(potentialResults);
+  potentialResults.push(potentialResults(actualResults));
+  }
+  for (var i = 0; i < potentialResults.passwordLengthSelect; i++) {
+  result[i] = actualResults[i];
+  }
+
   //Ability to call password results outside of function
-  return passwordResults.join('');
+  return actualResults.join('');
 };
+
+randomCharacters = function (min, max) {
+  var value = Math.floor(Math.random());
+ }
   
 
 // Write password to the #password input
@@ -116,4 +123,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-//Listener for the button click to write password. 
