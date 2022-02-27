@@ -110,7 +110,7 @@ function generatePassword () {
 };
 
 randomCharacters = function (min, max) {
-  var value = Math.floor(Math.random());
+  var value = (Math.random());
  }
   
 
